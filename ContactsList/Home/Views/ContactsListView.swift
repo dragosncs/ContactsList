@@ -24,6 +24,9 @@ struct ContactsListView: View {
                 }
             }
             .navigationTitle("Contactele Mele")
+            .onAppear{
+                viewModel.loadContacts()
+            }
         }
     }
 }

@@ -16,6 +16,7 @@
 		87F835052B67F20100DFB696 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F835042B67F20100DFB696 /* NetworkingManager.swift */; };
 		87F835072B67F27A00DFB696 /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F835062B67F27A00DFB696 /* ContactDetailView.swift */; };
 		87F835092B67F8A300DFB696 /* ContactImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F835082B67F8A300DFB696 /* ContactImageView.swift */; };
+		87F8350B2B67FECC00DFB696 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F8350A2B67FECC00DFB696 /* LocalFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		87F835042B67F20100DFB696 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		87F835062B67F27A00DFB696 /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 		87F835082B67F8A300DFB696 /* ContactImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactImageView.swift; sourceTree = "<group>"; };
+		87F8350A2B67FECC00DFB696 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				87F835042B67F20100DFB696 /* NetworkingManager.swift */,
+				87F8350A2B67FECC00DFB696 /* LocalFileManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				87F834EE2B67EC0600DFB696 /* ContactsListApp.swift in Sources */,
 				87F835052B67F20100DFB696 /* NetworkingManager.swift in Sources */,
 				87F835012B67F14E00DFB696 /* Contacts.swift in Sources */,
+				87F8350B2B67FECC00DFB696 /* LocalFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

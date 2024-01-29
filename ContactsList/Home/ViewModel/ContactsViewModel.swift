@@ -13,9 +13,11 @@ class ContactsViewModel: ObservableObject {
     @Published var activeContacts: [Contacts] = []
     @Published var image: UIImage? = nil
     
+    private var fileManager = LocalFileManager.instance
+    
     private var contactsCancellables = Set<AnyCancellable>()
     
-
+    
     
     init() {
         fetchContacts()
@@ -28,24 +30,31 @@ class ContactsViewModel: ObservableObject {
             .decode(type: [Contacts].self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: NetworkingManager.handleCompletion) { [weak self] name in
-                self?.activeContacts = name.filter { $0.status == "active" }
+                guard let self = self else {return}
+                self.activeContacts = name.filter { $0.status == "active" }
+                self.fileManager.saveContacts(activeContacts)
             }
             .store(in: &contactsCancellables)
     }
     
     private func downloadImages() {
         guard let imageUrl = URL(string: "https://picsum.photos/200/200") else { return }
-               
-               URLSession.shared.dataTask(with: imageUrl) { data, response, error in
-                   guard let data = data, error == nil else {
-                       print("Failed to load image:", error?.localizedDescription ?? "Unknown error")
-                       return
-                   }
-                   DispatchQueue.main.async {
-                       self.image = UIImage(data: data)
-                   }
-               }.resume()
-           }
+        
+        URLSession.shared.dataTask(with: imageUrl) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Failed to load image:", error?.localizedDescription ?? "Unknown error")
+                return
+            }
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data)
+            }
+        }.resume()
+    }
+    
+     func loadContacts() {
+        activeContacts = fileManager.loadContacts()
+    }
+    
     
     func extractInitials(for name: String) -> String {
         var initials = ""
