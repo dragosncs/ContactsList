@@ -24,7 +24,7 @@ class ContactsViewModel: ObservableObject {
         downloadImages()
     }
     
-    private func fetchContacts() {
+     func fetchContacts() {
         guard let url = URL(string: "https://gorest.co.in/public/v2/users") else { return }
         NetworkingManager.download(url: url)
             .decode(type: [Contacts].self, decoder: JSONDecoder())
@@ -37,18 +37,19 @@ class ContactsViewModel: ObservableObject {
             .store(in: &contactsCancellables)
     }
     
-    private func downloadImages() {
+     func downloadImages() {
         guard let imageUrl = URL(string: "https://picsum.photos/200/200") else { return }
-        
-        URLSession.shared.dataTask(with: imageUrl) { data, response, error in
-            guard let data = data, error == nil else {
-                print("Failed to load image:", error?.localizedDescription ?? "Unknown error")
-                return
-            }
-            DispatchQueue.main.async {
-                self.image = UIImage(data: data)
-            }
-        }.resume()
+         
+         NetworkingManager.download(url: imageUrl)
+             .tryMap({ (data) -> UIImage? in
+                 return UIImage(data: data)
+             })
+             .receive(on: DispatchQueue.main)
+             .sink(receiveCompletion: NetworkingManager.handleCompletion(completion:), receiveValue: { [weak self] (returnedImage) in
+                 guard let self = self, let downloadedImage = returnedImage else { return }
+                 self.image = downloadedImage
+             })
+             .store(in: &contactsCancellables)
     }
     
      func loadContacts() {

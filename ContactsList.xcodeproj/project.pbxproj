@@ -17,7 +17,18 @@
 		87F835072B67F27A00DFB696 /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F835062B67F27A00DFB696 /* ContactDetailView.swift */; };
 		87F835092B67F8A300DFB696 /* ContactImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F835082B67F8A300DFB696 /* ContactImageView.swift */; };
 		87F8350B2B67FECC00DFB696 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F8350A2B67FECC00DFB696 /* LocalFileManager.swift */; };
+		87F8351A2B68067B00DFB696 /* ContactsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F835192B68067B00DFB696 /* ContactsViewModel_Tests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		87F835142B68065600DFB696 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87F834E22B67EC0600DFB696 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87F834E92B67EC0600DFB696;
+			remoteInfo = ContactsList;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		87F834EA2B67EC0600DFB696 /* ContactsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,10 +42,19 @@
 		87F835062B67F27A00DFB696 /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 		87F835082B67F8A300DFB696 /* ContactImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactImageView.swift; sourceTree = "<group>"; };
 		87F8350A2B67FECC00DFB696 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		87F835102B68065600DFB696 /* ContactsListUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsListUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87F835192B68067B00DFB696 /* ContactsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		87F834E72B67EC0600DFB696 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87F8350D2B68065600DFB696 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				87F834EC2B67EC0600DFB696 /* ContactsList */,
+				87F835112B68065600DFB696 /* ContactsListUnitTests */,
 				87F834EB2B67EC0600DFB696 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				87F834EA2B67EC0600DFB696 /* ContactsList.app */,
+				87F835102B68065600DFB696 /* ContactsListUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +147,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		87F835112B68065600DFB696 /* ContactsListUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				87F835192B68067B00DFB696 /* ContactsViewModel_Tests.swift */,
+			);
+			path = ContactsListUnitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +175,24 @@
 			productReference = 87F834EA2B67EC0600DFB696 /* ContactsList.app */;
 			productType = "com.apple.product-type.application";
 		};
+		87F8350F2B68065600DFB696 /* ContactsListUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87F835162B68065600DFB696 /* Build configuration list for PBXNativeTarget "ContactsListUnitTests" */;
+			buildPhases = (
+				87F8350C2B68065600DFB696 /* Sources */,
+				87F8350D2B68065600DFB696 /* Frameworks */,
+				87F8350E2B68065600DFB696 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87F835152B68065600DFB696 /* PBXTargetDependency */,
+			);
+			name = ContactsListUnitTests;
+			productName = ContactsListUnitTests;
+			productReference = 87F835102B68065600DFB696 /* ContactsListUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -157,6 +205,10 @@
 				TargetAttributes = {
 					87F834E92B67EC0600DFB696 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					87F8350F2B68065600DFB696 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 87F834E92B67EC0600DFB696;
 					};
 				};
 			};
@@ -174,6 +226,7 @@
 			projectRoot = "";
 			targets = (
 				87F834E92B67EC0600DFB696 /* ContactsList */,
+				87F8350F2B68065600DFB696 /* ContactsListUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -185,6 +238,13 @@
 			files = (
 				87F834F52B67EC0800DFB696 /* Preview Assets.xcassets in Resources */,
 				87F834F22B67EC0800DFB696 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87F8350E2B68065600DFB696 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +266,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		87F8350C2B68065600DFB696 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87F8351A2B68067B00DFB696 /* ContactsViewModel_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87F835152B68065600DFB696 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87F834E92B67EC0600DFB696 /* ContactsList */;
+			targetProxy = 87F835142B68065600DFB696 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		87F834F62B67EC0800DFB696 /* Debug */ = {
@@ -384,6 +460,40 @@
 			};
 			name = Release;
 		};
+		87F835172B68065600DFB696 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dragosneacsu.ContactsListUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ContactsList.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ContactsList";
+			};
+			name = Debug;
+		};
+		87F835182B68065600DFB696 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dragosneacsu.ContactsListUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ContactsList.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ContactsList";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -401,6 +511,15 @@
 			buildConfigurations = (
 				87F834F92B67EC0800DFB696 /* Debug */,
 				87F834FA2B67EC0800DFB696 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87F835162B68065600DFB696 /* Build configuration list for PBXNativeTarget "ContactsListUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87F835172B68065600DFB696 /* Debug */,
+				87F835182B68065600DFB696 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
