@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContactsListView: View {
+    @StateObject private var viewModel = ContactsViewModel()
+    
     var body: some View {
         NavigationView {
             List {
