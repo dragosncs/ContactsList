@@ -12,20 +12,20 @@ struct ContactsListView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(0...9, id: \.self) { num in
-                    if num % 2 == 0 {
-                        roundedInitialsView(for: "DragosN")
+            List (viewModel.activeContacts) { contact in
+                NavigationLink(destination: ContactDetailView(contact: contact)) {
+                    if contact.id % 2 == 0 {
+                        roundedInitialsView(for: contact.name)
                     }
                     else {
-                        Text("Odd Number")
+                      
                     }
+                    Text(contact.name)
+                }
                 }
             }
             .navigationTitle("Contactele Mele")
         }
-       
-    }
 }
 
 #Preview {

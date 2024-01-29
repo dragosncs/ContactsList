@@ -14,6 +14,7 @@
 		87F835012B67F14E00DFB696 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F835002B67F14E00DFB696 /* Contacts.swift */; };
 		87F835032B67F1A200DFB696 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F835022B67F1A200DFB696 /* ContactsViewModel.swift */; };
 		87F835052B67F20100DFB696 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F835042B67F20100DFB696 /* NetworkingManager.swift */; };
+		87F835072B67F27A00DFB696 /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F835062B67F27A00DFB696 /* ContactDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		87F835002B67F14E00DFB696 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		87F835022B67F1A200DFB696 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		87F835042B67F20100DFB696 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		87F835062B67F27A00DFB696 /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				87F834EF2B67EC0600DFB696 /* ContactsListView.swift */,
+				87F835062B67F27A00DFB696 /* ContactDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F835072B67F27A00DFB696 /* ContactDetailView.swift in Sources */,
 				87F834F02B67EC0600DFB696 /* ContactsListView.swift in Sources */,
 				87F835032B67F1A200DFB696 /* ContactsViewModel.swift in Sources */,
 				87F834EE2B67EC0600DFB696 /* ContactsListApp.swift in Sources */,
