@@ -30,5 +30,14 @@ class ContactsViewModel: ObservableObject {
             .store(in: &contactsCancellables)
     }
     
-    
+    func extractInitials(for name: String) -> String {
+        var initials = ""
+        name
+            .replacing("\n", with: "")
+            .split(separator: " ")
+            .forEach { substring in
+                initials += String(substring.first ?? Character(""))
+            }
+        return initials
+    }
 }

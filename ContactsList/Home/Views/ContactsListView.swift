@@ -18,14 +18,14 @@ struct ContactsListView: View {
                         roundedInitialsView(for: contact.name)
                     }
                     else {
-                      
+                        
                     }
                     Text(contact.name)
-                }
                 }
             }
             .navigationTitle("Contactele Mele")
         }
+    }
 }
 
 #Preview {
@@ -34,7 +34,7 @@ struct ContactsListView: View {
 
 extension ContactsListView {
     private func roundedInitialsView(for name: String) -> some View {
-        let initials = "DN"
+        let initials = viewModel.extractInitials(for: name)
         return ZStack {
             Circle()
                 .fill(Color.gray)
