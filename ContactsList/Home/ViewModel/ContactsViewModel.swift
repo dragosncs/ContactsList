@@ -7,9 +7,11 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class ContactsViewModel: ObservableObject {
     @Published var activeContacts: [Contacts] = []
+    @Published var image: UIImage? = nil
     
     private var contactsCancellables = Set<AnyCancellable>()
     
@@ -17,9 +19,10 @@ class ContactsViewModel: ObservableObject {
     
     init() {
         fetchContacts()
+        downloadImages()
     }
     
-    func fetchContacts() {
+    private func fetchContacts() {
         guard let url = URL(string: "https://gorest.co.in/public/v2/users") else { return }
         NetworkingManager.download(url: url)
             .decode(type: [Contacts].self, decoder: JSONDecoder())
@@ -29,6 +32,20 @@ class ContactsViewModel: ObservableObject {
             }
             .store(in: &contactsCancellables)
     }
+    
+    private func downloadImages() {
+        guard let imageUrl = URL(string: "https://picsum.photos/200/200") else { return }
+               
+               URLSession.shared.dataTask(with: imageUrl) { data, response, error in
+                   guard let data = data, error == nil else {
+                       print("Failed to load image:", error?.localizedDescription ?? "Unknown error")
+                       return
+                   }
+                   DispatchQueue.main.async {
+                       self.image = UIImage(data: data)
+                   }
+               }.resume()
+           }
     
     func extractInitials(for name: String) -> String {
         var initials = ""

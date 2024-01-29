@@ -18,7 +18,7 @@ struct ContactsListView: View {
                         roundedInitialsView(for: contact.name)
                     }
                     else {
-                        
+                        ContactImageView(viewModel: ContactsViewModel())
                     }
                     Text(contact.name)
                 }
