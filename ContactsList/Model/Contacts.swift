@@ -10,5 +10,11 @@ import Foundation
 struct Contacts: Identifiable, Codable {
     let id: Int
     let name: String
-    let status: String
+    let status: ContactStatus
+}
+
+enum ContactStatus: String, Codable {
+    case active
+    case inactive
+    
 }

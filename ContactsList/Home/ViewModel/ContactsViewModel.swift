@@ -31,7 +31,7 @@ class ContactsViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: NetworkingManager.handleCompletion) { [weak self] name in
                 guard let self = self else {return}
-                self.activeContacts = name.filter { $0.status == "active" }
+                self.activeContacts = name.filter { $0.status.rawValue == ContactStatus.active.rawValue }
                 self.fileManager.saveContacts(activeContacts)
             }
             .store(in: &contactsCancellables)
